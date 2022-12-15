@@ -19,5 +19,11 @@ pipeline {
         sh 'mvn clean package'
       }
     }
+    
+    stage ('Deploy-to-Tomcat'){
+      steps {
+        sh 'cp target/*.war /home/raju/Downloads/apache-tomcat-8.5.84/webapps/'
+      }
+    }
   }
 }
